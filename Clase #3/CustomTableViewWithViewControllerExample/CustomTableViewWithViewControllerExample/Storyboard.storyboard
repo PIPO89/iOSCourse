@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="70d-cP-NvO">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dogs View Controller-->
+        <scene sceneID="936-G2-EzF">
+            <objects>
+                <viewController id="70d-cP-NvO" customClass="DogsViewController" customModule="CustomTableViewWithViewControllerExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oa1-H7-I65"/>
+                        <viewControllerLayoutGuide type="bottom" id="bi9-fi-1Rw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ERq-OU-nyD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Noy-Bi-1r4">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4wG-lr-RXF">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="70d-cP-NvO" id="SaS-U3-okV"/>
+                                            <outlet property="delegate" destination="70d-cP-NvO" id="ePs-t0-KEH"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Noy-Bi-1r4" firstAttribute="top" secondItem="oa1-H7-I65" secondAttribute="bottom" id="3If-wU-UMJ"/>
+                            <constraint firstItem="bi9-fi-1Rw" firstAttribute="top" secondItem="Noy-Bi-1r4" secondAttribute="bottom" id="aUO-VT-6uy"/>
+                            <constraint firstItem="Noy-Bi-1r4" firstAttribute="leading" secondItem="ERq-OU-nyD" secondAttribute="leading" id="eck-9f-svX"/>
+                            <constraint firstAttribute="trailing" secondItem="Noy-Bi-1r4" secondAttribute="trailing" id="uiy-cr-Z1z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="4wG-lr-RXF" id="ChI-IF-mmw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JyH-oS-j4Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-313" y="187"/>
+        </scene>
+    </scenes>
+</document>

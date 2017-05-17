@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "16FCC8A61ECA3AA300D5F18F"
-               BuildableName = "Tarea.app"
-               BlueprintName = "Tarea"
-               ReferencedContainer = "container:Tarea.xcodeproj">
+               BlueprintIdentifier = "16B3C36B1ECBB91E00A8CAEF"
+               BuildableName = "CustomTableView.app"
+               BlueprintName = "CustomTableView"
+               ReferencedContainer = "container:CustomTableView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "16FCC8A61ECA3AA300D5F18F"
-            BuildableName = "Tarea.app"
-            BlueprintName = "Tarea"
-            ReferencedContainer = "container:Tarea.xcodeproj">
+            BlueprintIdentifier = "16B3C36B1ECBB91E00A8CAEF"
+            BuildableName = "CustomTableView.app"
+            BlueprintName = "CustomTableView"
+            ReferencedContainer = "container:CustomTableView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "16FCC8A61ECA3AA300D5F18F"
-            BuildableName = "Tarea.app"
-            BlueprintName = "Tarea"
-            ReferencedContainer = "container:Tarea.xcodeproj">
+            BlueprintIdentifier = "16B3C36B1ECBB91E00A8CAEF"
+            BuildableName = "CustomTableView.app"
+            BlueprintName = "CustomTableView"
+            ReferencedContainer = "container:CustomTableView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "16FCC8A61ECA3AA300D5F18F"
-            BuildableName = "Tarea.app"
-            BlueprintName = "Tarea"
-            ReferencedContainer = "container:Tarea.xcodeproj">
+            BlueprintIdentifier = "16B3C36B1ECBB91E00A8CAEF"
+            BuildableName = "CustomTableView.app"
+            BlueprintName = "CustomTableView"
+            ReferencedContainer = "container:CustomTableView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
