@@ -17,6 +17,8 @@
 		16622DC61ECE77C8007C6A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16622DC51ECE77C8007C6A0C /* Assets.xcassets */; };
 		16622DCA1ECE7B63007C6A0C /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16622DC81ECE7B63007C6A0C /* CategoryTableViewCell.swift */; };
 		16622DCB1ECE7B63007C6A0C /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16622DC91ECE7B63007C6A0C /* CategoryTableViewCell.xib */; };
+		16622DCE1ECE869B007C6A0C /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16622DCC1ECE869B007C6A0C /* NewsTableViewCell.swift */; };
+		16622DCF1ECE869B007C6A0C /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16622DCD1ECE869B007C6A0C /* NewsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		16622DC51ECE77C8007C6A0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16622DC81ECE7B63007C6A0C /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		16622DC91ECE7B63007C6A0C /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		16622DCC1ECE869B007C6A0C /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewCell.swift; path = CustomCell/NewsTableViewCell.swift; sourceTree = "<group>"; };
+		16622DCD1ECE869B007C6A0C /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsTableViewCell.xib; path = CustomCell/NewsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 			children = (
 				16622DC81ECE7B63007C6A0C /* CategoryTableViewCell.swift */,
 				16622DC91ECE7B63007C6A0C /* CategoryTableViewCell.xib */,
+				16622DCC1ECE869B007C6A0C /* NewsTableViewCell.swift */,
+				16622DCD1ECE869B007C6A0C /* NewsTableViewCell.xib */,
 			);
 			name = CustomCell;
 			sourceTree = "<group>";
@@ -180,6 +186,7 @@
 			files = (
 				16622DCB1ECE7B63007C6A0C /* CategoryTableViewCell.xib in Resources */,
 				16622DC61ECE77C8007C6A0C /* Assets.xcassets in Resources */,
+				16622DCF1ECE869B007C6A0C /* NewsTableViewCell.xib in Resources */,
 				16622DA71ECE6564007C6A0C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +200,7 @@
 			files = (
 				16622DA21ECE6564007C6A0C /* AppDelegate.swift in Sources */,
 				16622DB81ECE722F007C6A0C /* CategoryViewController.swift in Sources */,
+				16622DCE1ECE869B007C6A0C /* NewsTableViewCell.swift in Sources */,
 				16622DBA1ECE723C007C6A0C /* NewsViewController.swift in Sources */,
 				16622DC01ECE743E007C6A0C /* News.swift in Sources */,
 				16622DCA1ECE7B63007C6A0C /* CategoryTableViewCell.swift in Sources */,

@@ -17,6 +17,7 @@ class CategoryViewController: UIViewController {
         super.viewDidLoad()
         initializeCategories()
         tableView.registerCustomCell(identifier: CategoryTableViewCell.getCellIdentifier())
+        self.title = "Categories"
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,13 +35,19 @@ class CategoryViewController: UIViewController {
 }
 
 extension CategoryViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let newsViewController = storyboard?.instantiateViewController(withIdentifier: NewsViewController.getUIViewControllerIdentifier()) as! NewsViewController
+        newsViewController.news = categories[indexPath.row].newArray
+        navigationController?.pushViewController(newsViewController, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.getCellIdentifier()) as! CategoryTableViewCell
-        
+        cell.setUpCell(category: categories[indexPath.row])
         return cell
     }
     

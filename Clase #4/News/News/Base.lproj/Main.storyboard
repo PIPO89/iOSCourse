@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Categories-->
+        <!--Category View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CategoryViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="CategoryViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -43,7 +43,7 @@
                             <constraint firstItem="M9G-qh-rnc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pgU-ci-YVN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Categories" id="U95-ab-L36"/>
+                    <navigationItem key="navigationItem" id="U95-ab-L36"/>
                     <connections>
                         <outlet property="tableView" destination="NEm-BD-wUv" id="rVZ-4l-qcx"/>
                     </connections>
@@ -55,7 +55,7 @@
         <!--News View Controller-->
         <scene sceneID="K3g-bl-WVE">
             <objects>
-                <viewController storyboardIdentifier="NewsViewController" id="SRj-HJ-xIX" customClass="NewsViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsViewController" automaticallyAdjustsScrollViewInsets="NO" id="SRj-HJ-xIX" customClass="NewsViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zkj-DW-aHN"/>
                         <viewControllerLayoutGuide type="bottom" id="VhH-hD-XHm"/>
@@ -63,8 +63,28 @@
                     <view key="view" contentMode="scaleToFill" id="Z8w-qg-F2t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tsw-9t-xXI">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EUJ-H2-OLn">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tsw-9t-xXI" firstAttribute="leading" secondItem="Z8w-qg-F2t" secondAttribute="leading" id="5tN-Fk-jRT"/>
+                            <constraint firstItem="tsw-9t-xXI" firstAttribute="top" secondItem="Zkj-DW-aHN" secondAttribute="bottom" id="Eru-aY-0uH"/>
+                            <constraint firstItem="VhH-hD-XHm" firstAttribute="top" secondItem="tsw-9t-xXI" secondAttribute="bottom" id="SJz-9C-co1"/>
+                            <constraint firstAttribute="trailing" secondItem="tsw-9t-xXI" secondAttribute="trailing" id="zQ9-wc-SJ8"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="EUJ-H2-OLn" id="Opy-LL-jBb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xjc-BK-Z0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

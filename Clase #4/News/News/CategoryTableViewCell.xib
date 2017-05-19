@@ -15,9 +15,35 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ymt-Hb-FtA">
+                        <rect key="frame" x="20" y="20" width="280" height="109.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xik-dV-XWS">
+                                <rect key="frame" x="0.0" y="0.0" width="135" height="109.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nq-Rw-3m3">
+                                <rect key="frame" x="145" y="0.0" width="135" height="109.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ymt-Hb-FtA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="7i7-ED-nIM"/>
+                    <constraint firstAttribute="trailing" secondItem="Ymt-Hb-FtA" secondAttribute="trailing" constant="20" id="KmG-UE-kvt"/>
+                    <constraint firstItem="Ymt-Hb-FtA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="fwu-6c-1ob"/>
+                    <constraint firstAttribute="bottom" secondItem="Ymt-Hb-FtA" secondAttribute="bottom" constant="20" id="ngv-Wd-MhG"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="categoryImageView" destination="xik-dV-XWS" id="GB3-o2-IQj"/>
+                <outlet property="nameLabel" destination="2nq-Rw-3m3" id="MrN-Sr-IrO"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
