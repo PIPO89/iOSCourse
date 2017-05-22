@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kKF-8W-nec">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Prime Number View Controller-->
+        <scene sceneID="aFh-gy-Hhd">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="kKF-8W-nec" customClass="PrimeNumberViewController" customModule="Tarea__2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M2V-yt-AGE"/>
+                        <viewControllerLayoutGuide type="bottom" id="5sr-ig-T6s"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HzD-t8-ejC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4sR-g4-ZOw">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ov1-zA-yXi">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="kKF-8W-nec" id="eD7-Lz-Fdv"/>
+                                            <outlet property="delegate" destination="kKF-8W-nec" id="TgU-Bd-wO8"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4sR-g4-ZOw" firstAttribute="top" secondItem="M2V-yt-AGE" secondAttribute="bottom" id="LDp-hB-yeN"/>
+                            <constraint firstAttribute="bottom" secondItem="4sR-g4-ZOw" secondAttribute="bottom" id="XCC-k8-VU7"/>
+                            <constraint firstItem="4sR-g4-ZOw" firstAttribute="leading" secondItem="HzD-t8-ejC" secondAttribute="leading" id="eo9-3G-2ro"/>
+                            <constraint firstAttribute="trailing" secondItem="4sR-g4-ZOw" secondAttribute="trailing" id="wbn-Em-88J"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="ov1-zA-yXi" id="afc-nF-HSl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cSZ-mz-pk5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="382" y="-128"/>
+        </scene>
+    </scenes>
+</document>
