@@ -68,15 +68,15 @@
 		16622DA01ECE6564007C6A0C /* News */ = {
 			isa = PBXGroup;
 			children = (
-				16622DC71ECE7B28007C6A0C /* CustomCell */,
-				16622DBE1ECE73FA007C6A0C /* Models */,
-				16622DBB1ECE7341007C6A0C /* Extentions */,
-				16622DA11ECE6564007C6A0C /* AppDelegate.swift */,
-				16622DB51ECE71A9007C6A0C /* Categories */,
 				16622DAD1ECE6564007C6A0C /* Info.plist */,
-				16622DA51ECE6564007C6A0C /* Main.storyboard */,
-				16622DB61ECE71B1007C6A0C /* News */,
+				16622DA11ECE6564007C6A0C /* AppDelegate.swift */,
 				16622DC51ECE77C8007C6A0C /* Assets.xcassets */,
+				16622DB51ECE71A9007C6A0C /* Categories */,
+				16622DC71ECE7B28007C6A0C /* CustomCell */,
+				16622DBB1ECE7341007C6A0C /* Extentions */,
+				16622DA51ECE6564007C6A0C /* Main.storyboard */,
+				16622DBE1ECE73FA007C6A0C /* Models */,
+				16622DB61ECE71B1007C6A0C /* News */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -361,6 +361,7 @@
 				16622DB21ECE6564007C6A0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

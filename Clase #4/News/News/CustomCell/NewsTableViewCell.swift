@@ -22,4 +22,18 @@ class NewsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    func setUpCell(news: News) {
+        titleLabel.text = news.titleNews
+        descriptionLabel.text = news.descriptionNews
+        dateLabel.text = news.createdAt.toString(dateFormat: "yyyy-MM-dd HH:mm:ss")
+    }
+    
+}
+
+extension Date {
+    func toString(dateFormat format : String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self)
+    }
 }

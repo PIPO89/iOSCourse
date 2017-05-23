@@ -16,10 +16,20 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerCustomCell(identifier: NewsTableViewCell.getCellIdentifier())
+        createAddButtom()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func createAddButtom() {
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addAction))
+        navigationItem.rightBarButtonItem = addButton
+    }
+    
+    func addAction() {
+        
     }
     
 }
@@ -32,15 +42,12 @@ extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.getCellIdentifier()) as! NewsTableViewCell
-        let item = news?[indexPath.row]
-        cell.titleLabel.text = item?.titleNews
-        cell.descriptionLabel.text = item?.descriptionNews
-        //cell.dateLabel.text =
+        cell.setUpCell(news: news![indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 100
     }
     
 }
