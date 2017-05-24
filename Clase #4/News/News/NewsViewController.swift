@@ -8,15 +8,30 @@
 
 import UIKit
 
+protocol NewsViewControllerDelegate : class {
+    func newsToCategory(arrayNews: [News], type: CategoryType)
+}
+
 class NewsViewController: UIViewController {
     
     var news : [News]?
+    var categotyType: CategoryType?
+    
+    weak var delegate: NewsViewControllerDelegate?
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerCustomCell(identifier: NewsTableViewCell.getCellIdentifier())
         createAddButtom()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let news = news, let categotyType = categotyType {
+            delegate?.newsToCategory(arrayNews: news, type: categotyType)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,7 +44,9 @@ class NewsViewController: UIViewController {
     }
     
     func addAction() {
-        
+        let viewcontroller = storyboard!.instantiateViewController(withIdentifier: NewsDetailTableViewController.getUIViewControllerIdentifier()) as! NewsDetailTableViewController
+        viewcontroller.delegate = self
+        navigationController?.pushViewController(viewcontroller, animated: true)
     }
     
 }
@@ -50,4 +67,11 @@ extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
         return 100
     }
     
+}
+
+extension NewsViewController : NewsDetailTableViewControllerDelegate {
+    func addNews(news: News) {
+        self.news?.append(news)
+        self.tableView.reloadData()
+    }
 }

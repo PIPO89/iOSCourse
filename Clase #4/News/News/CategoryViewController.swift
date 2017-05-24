@@ -25,10 +25,10 @@ class CategoryViewController: UIViewController {
     }
 
     func initializeCategories() {
-        let economyCategory = Category(name: "Economy", image: "economy")
-        let sportCategory = Category(name: "Sports", image: "sports")
-        let incidentsCategory = Category(name: "Incidents", image: "incident")
-        let technologyCategory = Category(name: "Technology", image: "technology")
+        let economyCategory = Category(name: "Economy", image: "economy", type: CategoryType.economy)
+        let sportCategory = Category(name: "Sports", image: "sports", type: CategoryType.sports)
+        let incidentsCategory = Category(name: "Incidents", image: "incident", type: CategoryType.incident)
+        let technologyCategory = Category(name: "Technology", image: "technology", type: CategoryType.technology)
         categories = [economyCategory, sportCategory, incidentsCategory, technologyCategory]
     }
     
@@ -38,6 +38,8 @@ extension CategoryViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let newsViewController = storyboard?.instantiateViewController(withIdentifier: NewsViewController.getUIViewControllerIdentifier()) as! NewsViewController
         newsViewController.news = categories[indexPath.row].newArray
+        newsViewController.categotyType = categories[indexPath.row].type
+        newsViewController.delegate = self
         navigationController?.pushViewController(newsViewController, animated: true)
     }
     
@@ -53,5 +55,16 @@ extension CategoryViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+}
+
+extension CategoryViewController : NewsViewControllerDelegate {
+    func newsToCategory(arrayNews: [News], type: CategoryType) {
+        let index = categories.index { $0.type == type }
+        if let indexUnraped = index {
+            let categoryUpdate = categories[indexUnraped]
+            categoryUpdate.newArray = arrayNews
+            categories[indexUnraped] = categoryUpdate
+        }
     }
 }
