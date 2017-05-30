@@ -54,6 +54,8 @@ extension DogsViewController : UITableViewDataSource, UITableViewDelegate {
         let dog = dogs![indexPath.row]
         cell.lblName.text = dog.name
         cell.lblColor.text = dog.color
+        let image : UIImage = UIImage(data: dog.imageData as Data)!
+        cell.imgView.image = image
         return cell
     }
     

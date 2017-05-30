@@ -8,10 +8,14 @@
 
 import UIKit
 
-class AddDogViewController: UIViewController {
+class AddDogViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtColor: UITextField!
+    @IBOutlet weak var imgView: UIImageView!
+    
+    var imageData = NSData()
+    var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()        
@@ -25,18 +29,32 @@ class AddDogViewController: UIViewController {
     
     func addDog() {
         let addBUtton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(addAction))
+        addBUtton.isEnabled = false
         navigationItem.rightBarButtonItem = addBUtton
     }
     
     func addAction() {
         if(validatedFiled()) {
-            RealmManager.createDog(name: txtName.text!, color: txtColor.text!)
+            RealmManager.createDog(name: txtName.text!, color: txtColor.text!, data: imageData)
             navigationController?.popViewController(animated: true)
         }
     }
     
     @IBAction func addImgDog(_ sender: Any) {
-        
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            imagePicker.delegate = self
+            imagePicker.sourceType = .savedPhotosAlbum;
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageData = (UIImagePNGRepresentation(image) as NSData?)!
+            navigationItem.rightBarButtonItem?.isEnabled = true
+        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     func validatedFiled() -> Bool {

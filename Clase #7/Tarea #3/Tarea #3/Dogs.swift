@@ -12,6 +12,6 @@ import RealmSwift
 class Dogs: Object {
     dynamic var name = ""
     dynamic var color = ""
-    dynamic var imageName = ""
+    dynamic var imageData = NSData()
     dynamic var orden = 0
 }

@@ -23,43 +23,6 @@ class RealmManager: NSObject {
         }
     }
     
-//    class func getAllNews(type : Int) -> List<News>? {
-//        return getAllCategories(type: type).news
-//    }
-//    
-//    class func createNews(categoryType: Int, title: String, description: String) {
-//        let category = getAllCategories(type: categoryType)
-//        let news = News()
-//        news.titleNews = title
-//        news.descriptionNews = description
-//        news.createdAt = Date()
-//        let realm = try! Realm()
-//        try! realm.write {
-//            category.news.append(news)
-//        }
-//        addObjectToRealm(realmObject: news)
-//    }
-//    
-//    private class func creteDefaultDogs() -> Results<Category> {
-//        let economyCategory =  Category(value: ["name":"Economy","imageName":"economy","categoryType":1])
-//        let sportsCategory =  Category(value: ["name":"Sports","imageName":"sports","categoryType":2])
-//        let technologyCategory =  Category(value: ["name":"Technology","imageName":"technology","categoryType":3])
-//        let incidentCategory =  Category(value: ["name":"Inciden","imageName":"incident","categoryType":4])
-//        
-//        addObjectToRealm(realmObject: economyCategory)
-//        addObjectToRealm(realmObject: sportsCategory)
-//        addObjectToRealm(realmObject: technologyCategory)
-//        addObjectToRealm(realmObject: incidentCategory)
-//        
-//        return getAllCategories()
-//    }
-//
-//    private class func getAllCategories(type: Int) -> Category {
-//        let realm = try! Realm()
-//        let predicate = NSPredicate(format: "categoryType = %d", type)
-//        return realm.objects(Category.self).filter(predicate).first!
-//    }
-    
     private class func addObjectToRealm(realmObject: Object) {
         let realm = try! Realm()
         try! realm.write {
@@ -67,11 +30,12 @@ class RealmManager: NSObject {
         }
     }
     
-    class func createDog(name: String, color: String) {
+    class func createDog(name: String, color: String, data: NSData) {
         let allDogs = getAllDogs()
         let dog = Dogs()
         dog.name = name
         dog.color = color
+        dog.imageData = data
         if allDogs == nil {
             dog.orden = 1
         } else {
