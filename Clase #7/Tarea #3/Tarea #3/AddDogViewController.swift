@@ -12,7 +12,6 @@ class AddDogViewController: UIViewController, UINavigationControllerDelegate, UI
 
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtColor: UITextField!
-    @IBOutlet weak var imgView: UIImageView!
     
     var imageData = NSData()
     var imagePicker = UIImagePickerController()
@@ -49,7 +48,7 @@ class AddDogViewController: UIViewController, UINavigationControllerDelegate, UI
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageData = (UIImagePNGRepresentation(image) as NSData?)!
             navigationItem.rightBarButtonItem?.isEnabled = true
