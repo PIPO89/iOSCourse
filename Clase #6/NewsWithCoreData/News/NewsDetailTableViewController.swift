@@ -8,16 +8,12 @@
 
 import UIKit
 
-protocol NewsDetailTableViewControllerDelegate : class {
-    func addNews(news: News)
-}
-
 class NewsDetailTableViewController: UITableViewController {
 
     @IBOutlet weak var titletxt: UITextField!
     @IBOutlet weak var descriptiontxt: UITextView!
     
-    weak var delegate: NewsDetailTableViewControllerDelegate?
+    var category: Category?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +30,7 @@ class NewsDetailTableViewController: UITableViewController {
     }
     
     func saveNewsAction() {
-        let news = News(titleNews: titletxt.text!, descriptionNews: descriptiontxt.text!, createdAt: Date())
-        delegate?.addNews(news: news)
+        CoreDataManager.addNews(category: category!, title: titletxt.text!, description: descriptiontxt.text!)
         navigationController?.popViewController(animated: true)
     }
     

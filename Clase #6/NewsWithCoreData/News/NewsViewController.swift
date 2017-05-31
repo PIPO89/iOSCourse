@@ -8,16 +8,10 @@
 
 import UIKit
 
-protocol NewsViewControllerDelegate : class {
-    func newsToCategory(arrayNews: [News], type: CategoryType)
-}
-
 class NewsViewController: UIViewController {
     
     var news : [News]?
-    var categotyType: CategoryType?
-    
-    weak var delegate: NewsViewControllerDelegate?
+    var category: Category?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -27,11 +21,10 @@ class NewsViewController: UIViewController {
         createAddButtom()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if let news = news, let categotyType = categotyType {
-            delegate?.newsToCategory(arrayNews: news, type: categotyType)
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        news = category?.news.allObjects as? [News]
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,7 +38,7 @@ class NewsViewController: UIViewController {
     
     func addAction() {
         let viewcontroller = storyboard!.instantiateViewController(withIdentifier: NewsDetailTableViewController.getUIViewControllerIdentifier()) as! NewsDetailTableViewController
-        viewcontroller.delegate = self
+        viewcontroller.category = category
         navigationController?.pushViewController(viewcontroller, animated: true)
     }
     
@@ -54,7 +47,10 @@ class NewsViewController: UIViewController {
 extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (news?.count)!
+        guard let count = news?.count else {
+            return 0
+        }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -67,11 +63,4 @@ extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
         return 100
     }
     
-}
-
-extension NewsViewController : NewsDetailTableViewControllerDelegate {
-    func addNews(news: News) {
-        self.news?.append(news)
-        self.tableView.reloadData()
-    }
 }
