@@ -30,9 +30,8 @@ class RealmManager: NSObject {
     }
     
     class func validatedCat(name: String) -> Bool {
-        let realm = try! Realm()
         let predicate = NSPredicate(format: "name = %@", name)
-        let cat = realm.objects(Cat.self).filter(predicate).first
+        let cat = getAllCats()?.filter(predicate).first
         guard let _ = cat else {
             return true
         }
